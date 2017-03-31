@@ -1,217 +1,609 @@
-
-
-
-
-
-
-
-
-
-<!--动态判断界面应该展示哪种风格的界面 -->
-
-    
-    
-    
-        
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta content="width=device-width,initial-scale=0.8, minimum-scale=0.8, maximum-scale=3"
-          name="viewport" />
-    <meta name="renderer" content="webkit" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta property="qc:admins" content="754034015366713545637571540352652" />
-    <meta property="wb:webmaster" content="1ad39047f32b5b6b" />
-    <title>电子科技大学登录</title>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="pragma" content="no-cache"/>
+  <meta http-equiv="cache-control" content="no-cache"/>
+  <meta http-equiv="expires" content="0"/>
+  <meta http-equiv="content-style-type" content="text/css"/>
+  <meta http-equiv="content-script-type" content="text/javascript"/>
+  <script>
+      window.$BG_LANG='zh';
+  </script>
+  <script type="text/javascript" src="/eams/static/scripts/jquery/jquery,jquery.ui.core.js?bg=3.4.15"></script>
+  <script type="text/javascript" src="/eams/static/scripts/plugins/jquery-form,jquery-history,jquery-colorbox,jquery-chosen.js?bg=3.4.15"></script>
+  <script type="text/javascript" src="/eams/static/js/plugins/jquery.subscribe,/js/struts2/jquery.struts2,jquery.ui.struts2.js?bg=3.4.15"></script>
+  <script type="text/javascript" src="/eams/static/scripts/beangle/beangle,beangle-ui.js?bg=3.4.15"></script>
+  <script type="text/javascript">var App = {contextPath:"/eams"};jQuery(document).ready(function () {jQuery.struts2_jquery.version="3.6.1";beangle.contextPath=App.contextPath;jQuery.scriptPath = App.contextPath+"/static/";jQuery.struts2_jquerySuffix = "";jQuery.ajaxSettings.traditional = true;jQuery.ajaxSetup ({cache: false});});</script>
+  <script type="text/javascript" src="/eams/static/scripts/my97/WdatePicker-4.72.js?compress=no"></script>
+  <link id="jquery_theme_link" rel="stylesheet" href="/eams/static/themes/smoothness/jquery-ui.css?s2j=3.7.1" type="text/css"/>
+  <link id="beangle_theme_link" href="/eams/static/themes/default/beangle-ui,colorbox,chosen.css" rel="stylesheet" type="text/css" />
+
 </head>
-<script type="text/javascript" >
-erke = Math.floor(Math.random()*6 + 1); 
-//定义张数
-</script>
+<body>
 
-<script>
-    
+ 
+<div  style="margin-top:10px;" class="ajax_container"></div>
 
-</script>
+<table class="gridtable">
+	<thead class="gridhead">
+		<tr>
+			<th>学年度</th>
+			<th>学期</th>
+			<th>门数</th>
+			<th>总学分</th>
+			<th>平均绩点</th>
+		</tr>
+	</thead>
+	<tbody>
+					<tr class="griddata-even">
+						<td>2015-2016</td>
+						<td>1</td>
+						<td>9</td>
+						<td>22</td>
+						<td>2.38</td>
+					</tr>
+					<tr class="griddata-odd">
+						<td>2015-2016</td>
+						<td>2</td>
+						<td>14</td>
+						<td>30</td>
+						<td>2.16</td>
+					</tr>
+					<tr class="griddata-even">
+						<td>2014-2015</td>
+						<td>1</td>
+						<td>10</td>
+						<td>20</td>
+						<td>1.65</td>
+					</tr>
+					<tr class="griddata-odd">
+						<td>2016-2017</td>
+						<td>1</td>
+						<td>10</td>
+						<td>21</td>
+						<td>1.83</td>
+					</tr>
+					<tr class="griddata-even">
+						<td>2014-2015</td>
+						<td>2</td>
+						<td>15</td>
+						<td>33</td>
+						<td>2.24</td>
+					</tr>
+				<tr class="griddata-odd">
+						<th colSpan="2">在校汇总</th>
+						<th>58</th>
+						<th>126</th>
+						<th>2.07</th>
+				</tr>
+	 	<tr class="griddata-even">
+	 		<th colSpan="5" align="right">统计时间:2017-03-31 19:46</th>
+		</tr>
+	</tbody>
+</table>
+
+	<div  style="margin-top:10px;text-align:center;font-weight:bold;" class="ajax_container">成绩列表</div>
 
 
+ 
+<div class="grid">
 
 
+<table id="grid7489594821" class="gridtable">
+<thead class="gridhead">
 
 
-<link href="/authserver/custom/css/login.css" rel="stylesheet">
-<link href="/authserver/custom/css/iCheck/custom.css" rel="stylesheet">
+<tr>
+<th  width="10%" >学年学期</th>
+<th  width="10%" >课程代码</th>
+<th  width="10%" >课程序号</th>
+<th  width="20%" >课程名称</th>
+<th  width="14%" >课程类别</th>
+<th  width="7.2%" >学分</th>
+<th  width="7.2%" >总评成绩</th>
+<th  width="7.2%" >补考总评</th>
+<th  width="7.2%" >最终</th>
+</tr>
 
-<body onLoad="loadFresh();">
-<div class="auth_bg">
-    <img src="/authserver/custom/images/login-bg-autumn.jpg" alt="">
+</thead>
+
+<tbody id="grid7489594821_data"><tr>		<td>2014-2015 2</td>
+		<td>B1300220</td>
+		<td>B1300220.08</td>
+		<td>综合英语</td>
+<td>A类语言技能类</td>		<td>2</td>
+<td style="">	  			60 
+</td><td style=""></td><td style="">			60
+</td>		
+</tr><tr>		<td>2015-2016 2</td>
+		<td>K2226520</td>
+		<td>K2226520.01</td>
+		<td>综合应用设计 I</td>
+<td>实践类核心课程</td>		<td>2</td>
+<td style="">	  			74 
+</td><td style=""></td><td style="">			74
+</td>		
+</tr><tr>		<td>2015-2016 2</td>
+		<td>A0600120</td>
+		<td>A0600120.90</td>
+		<td>学术规范与论文写作</td>
+<td>核心通识课程</td>		<td>2</td>
+<td style="">	  			83 
+</td><td style=""></td><td style="">			83
+</td>		
+</tr><tr>		<td>2015-2016 1</td>
+		<td>B1301520</td>
+		<td>B1301520.21</td>
+		<td>职场英语</td>
+<td>C类专门用途类</td>		<td>2</td>
+<td style="">	  			69 
+</td><td style=""></td><td style="">			69
+</td>		
+</tr><tr>		<td>2015-2016 1</td>
+		<td>D1000735</td>
+		<td>D1000735.01</td>
+		<td>概率论与数理统计<span style="color:red;">(重修)</span></td>
+<td>学科通识课程</td>		<td>3.5</td>
+<td style="">	  			73 
+</td><td style=""></td><td style="">			73
+</td>		
+</tr><tr>		<td>2016-2017 1</td>
+		<td>H2227020</td>
+		<td>H2227020.01</td>
+		<td>大型机编程工具</td>
+<td>本专业选修课</td>		<td>2</td>
+<td style="color:red">	  			46 
+</td><td style="color:red">	  			25 
+</td><td style="color:red">			46
+</td>		
+</tr><tr>		<td>2014-2015 1</td>
+		<td>D1000540</td>
+		<td>D1000540.D6</td>
+		<td>线性代数与空间解析几何I</td>
+<td>学科通识课程</td>		<td>4</td>
+<td style="">	  			57 
+</td><td style=""></td><td style="">			60
+</td>		
+</tr><tr>		<td>2015-2016 2</td>
+		<td>E2201240</td>
+		<td>E2201240.02</td>
+		<td>数据库原理及应用<span style="color:red;">(重修)</span></td>
+<td>学科基础课程</td>		<td>4</td>
+<td style="">	  			60 
+</td><td style=""></td><td style="">			60
+</td>		
+</tr><tr>		<td>2015-2016 2</td>
+		<td>I1903320</td>
+		<td>I1903320.02</td>
+		<td>航空航天技术概论</td>
+<td>素质教育选修课（自然科学类）</td>		<td>2</td>
+<td style="">	  			80 
+</td><td style=""></td><td style="">			80
+</td>		
+</tr><tr>		<td>2014-2015 1</td>
+		<td>H2201810</td>
+		<td>H2201810.01</td>
+		<td>新生教育</td>
+<td>本专业选修课</td>		<td>1</td>
+<td style="">	  			88 
+</td><td style=""></td><td style="">			88
+</td>		
+</tr><tr>		<td>2015-2016 2</td>
+		<td>G2225030</td>
+		<td>G2225030.01</td>
+		<td>大型机操作系统<span style="color:red;">(重修)</span></td>
+<td>专业核心课程</td>		<td>3</td>
+<td style="color:red">	  			58 
+</td><td style="color:red"></td><td style="color:red">			58
+</td>		
+</tr><tr>		<td>2015-2016 2</td>
+		<td>1470810</td>
+		<td></td>
+		<td>大学体育选修I</td>
+<td>素质教育选修课</td>		<td>1</td>
+<td style="">	  			85 
+</td><td style=""></td><td style="">			85
+</td>		
+</tr><tr>		<td>2014-2015 1</td>
+		<td>L9800210</td>
+		<td>L9800210.01</td>
+		<td>军事训练</td>
+<td>实践类核心课程</td>		<td>1</td>
+<td style="">	  			70 
+</td><td style=""></td><td style="">			70
+</td>		
+</tr><tr>		<td>2016-2017 1</td>
+		<td>G2225420</td>
+		<td>G2225420.02</td>
+		<td>大型机DB2</td>
+<td>专业核心课程</td>		<td>2</td>
+<td style="">	  			42 
+</td><td style="">	  			60 
+</td><td style="">			60
+</td>		
+</tr><tr>		<td>2014-2015 2</td>
+		<td>I0904220</td>
+		<td>I0904220.01</td>
+		<td>思维成像</td>
+<td>素质教育选修课（自然科学类）</td>		<td>2</td>
+<td style="">	  			80 
+</td><td style=""></td><td style="">			80
+</td>		
+</tr><tr>		<td>2015-2016 2</td>
+		<td>B1498910</td>
+		<td>B1498910.13</td>
+		<td>网球D</td>
+<td>大学体育IV</td>		<td>1</td>
+<td style="">	  			71 
+</td><td style=""></td><td style="">			71
+</td>		
+</tr><tr>		<td>2014-2015 1</td>
+		<td>B9800320</td>
+		<td>B9800320.55</td>
+		<td>形势与政策</td>
+<td>思想政治理论课</td>		<td>2</td>
+<td style="">	  			86 
+</td><td style=""></td><td style="">			86
+</td>		
+</tr><tr>		<td>2014-2015 1</td>
+		<td>B1600220</td>
+		<td>B1600220.13</td>
+		<td>中国近现代史纲要</td>
+<td>思想政治理论课</td>		<td>2</td>
+<td style="">	  			69 
+</td><td style=""></td><td style="">			69
+</td>		
+</tr><tr>		<td>2014-2015 2</td>
+		<td>B1600130</td>
+		<td>B1600130.03</td>
+		<td>思想道德修养与法律基础</td>
+<td>思想政治理论课</td>		<td>3</td>
+<td style="">	  			86 
+</td><td style=""></td><td style="">			86
+</td>		
+</tr><tr>		<td>2014-2015 1</td>
+		<td>B9800110</td>
+		<td>B9800110.36</td>
+		<td>军事理论</td>
+<td>军事理论、体育</td>		<td>1</td>
+<td style="">	  			63 
+</td><td style=""></td><td style="">			63
+</td>		
+</tr><tr>		<td>2016-2017 1</td>
+		<td>G2225230</td>
+		<td>G2225230.01</td>
+		<td>交易中间件技术CICS</td>
+<td>专业核心课程</td>		<td>3</td>
+<td style="">	  			50 
+</td><td style="">	  			60 
+</td><td style="">			60
+</td>		
+</tr><tr>		<td>2016-2017 1</td>
+		<td>B1600360</td>
+		<td>B1600360.07</td>
+		<td>毛泽东思想和中国特色社会主义理论体系概论</td>
+<td>思想政治理论课</td>		<td>6</td>
+<td style="">	  			68 
+</td><td style=""></td><td style="">			68
+</td>		
+</tr><tr>		<td>2016-2017 1</td>
+		<td>G2231520</td>
+		<td>G2231520.01</td>
+		<td>信息安全工程</td>
+<td>本专业选修课</td>		<td>2</td>
+<td style="color:red">	  			36 
+</td><td style="color:red">	  			35 
+</td><td style="color:red">			36
+</td>		
+</tr><tr>		<td>2014-2015 2</td>
+		<td>D0400340</td>
+		<td>D0400340.08</td>
+		<td>大学物理Ⅰ</td>
+<td>学科通识课程</td>		<td>4</td>
+<td style="color:red">	  			44 
+</td><td style="color:red">	  			55 
+</td><td style="color:red">			55
+</td>		
+</tr><tr>		<td>2015-2016 2</td>
+		<td>I0408820</td>
+		<td>I0408820.03</td>
+		<td>营养与健康</td>
+<td>素质教育选修课（社会科学类）</td>		<td>2</td>
+<td style="">	  			86 
+</td><td style=""></td><td style="">			86
+</td>		
+</tr><tr>		<td>2015-2016 1</td>
+		<td>B1441910</td>
+		<td>B1441910.13</td>
+		<td>乒乓球C</td>
+<td>大学体育III</td>		<td>1</td>
+<td style="">	  			94 
+</td><td style=""></td><td style="">			94
+</td>		
+</tr><tr>		<td>2014-2015 2</td>
+		<td>E2200440</td>
+		<td>E2200440.06</td>
+		<td>数据结构与算法</td>
+<td>学科基础课程</td>		<td>4</td>
+<td style="">	  			63 
+</td><td style=""></td><td style="">			63
+</td>		
+</tr><tr>		<td>2014-2015 2</td>
+		<td>F2200210</td>
+		<td>F2200210.02</td>
+		<td>信息工程导论</td>
+<td>学科拓展课程</td>		<td>1</td>
+<td style="">	  			82 
+</td><td style=""></td><td style="">			82
+</td>		
+</tr><tr>		<td>2014-2015 2</td>
+		<td>I1748220</td>
+		<td>I1748220.01</td>
+		<td>VHDL程序设计</td>
+<td>素质教育选修课（自然科学类）</td>		<td>2</td>
+<td style="">	  			通过 
+</td><td style=""></td><td style="">			通过
+</td>		
+</tr><tr>		<td>2015-2016 1</td>
+		<td>E2200740</td>
+		<td>E2200740.01</td>
+		<td>计算机组成原理与结构<span style="color:red;">(重修)</span></td>
+<td>学科基础课程</td>		<td>4</td>
+<td style="">	  			60 
+</td><td style=""></td><td style="">			60
+</td>		
+</tr><tr>		<td>2014-2015 2</td>
+		<td>B1400210</td>
+		<td>B1400210.36</td>
+		<td>大学体育II</td>
+<td>军事理论、体育</td>		<td>1</td>
+<td style="">	  			92 
+</td><td style=""></td><td style="">			92
+</td>		
+</tr><tr>		<td>2016-2017 1</td>
+		<td>H2247530</td>
+		<td>H2247530.01</td>
+		<td>移动计算及应用开发技术</td>
+<td>本专业选修课</td>		<td>3</td>
+<td style="">	  			63 
+</td><td style=""></td><td style="">			63
+</td>		
+</tr><tr>		<td>2014-2015 2</td>
+		<td>E2201930</td>
+		<td>E2201930.01</td>
+		<td>应用数学基础</td>
+<td>学科基础课程</td>		<td>3</td>
+<td style="">	  			75 
+</td><td style=""></td><td style="">			75
+</td>		
+</tr><tr>		<td>2015-2016 1</td>
+		<td>I0720220</td>
+		<td>I0720220.01</td>
+		<td>易经导读</td>
+<td>素质教育选修课（文史哲类）</td>		<td>2</td>
+<td style="color:red">	  			0 
+</td><td style="color:red"></td><td style="color:red">			0
+</td>		
+</tr><tr>		<td>2014-2015 2</td>
+		<td>A1302220</td>
+		<td>A1302220.08</td>
+		<td>外国经典文学著作选读</td>
+<td>核心通识课程</td>		<td>2</td>
+<td style="">	  			51 
+</td><td style="">	  			60 
+</td><td style="">			60
+</td>		
+</tr><tr>		<td>2016-2017 1</td>
+		<td>E2201420</td>
+		<td>E2201420.03</td>
+		<td>系统分析与设计（含UML）</td>
+<td>学科基础课程</td>		<td>2</td>
+<td style="">	  			67 
+</td><td style=""></td><td style="">			67
+</td>		
+</tr><tr>		<td>2014-2015 1</td>
+		<td>B1400110</td>
+		<td>B1400110.05</td>
+		<td>大学体育I</td>
+<td>军事理论、体育</td>		<td>1</td>
+<td style="">	  			84 
+</td><td style=""></td><td style="">			84
+</td>		
+</tr><tr>		<td>2015-2016 2</td>
+		<td>E2201330</td>
+		<td>E2201330.05</td>
+		<td>软件工程基础</td>
+<td>学科基础课程</td>		<td>3</td>
+<td style="">	  			69 
+</td><td style=""></td><td style="">			69
+</td>		
+</tr><tr>		<td>2016-2017 1</td>
+		<td>C1600830</td>
+		<td>C1600830.03</td>
+		<td>哲学通论</td>
+<td>交叉通识课程</td>		<td>3</td>
+<td style="">	  			88 
+</td><td style=""></td><td style="">			88
+</td>		
+</tr><tr>		<td>2014-2015 2</td>
+		<td>I0720120</td>
+		<td>I0720120.01</td>
+		<td>问题驱动的创新与创业</td>
+<td>素质教育选修课（文史哲类）</td>		<td>2</td>
+<td style="">	  			及格 
+</td><td style=""></td><td style="">			及格
+</td>		
+</tr><tr>		<td>2014-2015 1</td>
+		<td>E2200140</td>
+		<td>E2200140.02</td>
+		<td>C语言程序设计</td>
+<td>学科基础课程</td>		<td>4</td>
+<td style="">	  			60 
+</td><td style=""></td><td style="">			60
+</td>		
+</tr><tr>		<td>2015-2016 1</td>
+		<td>I0488225</td>
+		<td>I0488225.01</td>
+		<td>脉冲功率技术与开关电源</td>
+<td>素质教育选修课（自然科学类）</td>		<td>2.5</td>
+<td style="">	  			73 
+</td><td style=""></td><td style="">			73
+</td>		
+</tr><tr>		<td>2014-2015 2</td>
+		<td>I1009030</td>
+		<td>I1009030.01</td>
+		<td>算法分析与设计</td>
+<td>素质教育选修课（自然科学类）</td>		<td>3</td>
+<td style="">	  			70 
+</td><td style=""></td><td style="">			70
+</td>		
+</tr><tr>		<td>2015-2016 2</td>
+		<td>E2201140</td>
+		<td>E2201140.04</td>
+		<td>计算机网络基础</td>
+<td>学科基础课程</td>		<td>4</td>
+<td style="">	  			55 
+</td><td style="">	  			60 
+</td><td style="">			60
+</td>		
+</tr><tr>		<td>2014-2015 1</td>
+		<td>D1000160</td>
+		<td>D1000160.05</td>
+		<td>微积分I</td>
+<td>学科通识课程</td>		<td>6</td>
+<td style="color:red">	  			43 
+</td><td style="color:red"></td><td style="color:red">			53
+</td>		
+</tr><tr>		<td>2014-2015 2</td>
+		<td>D1000250</td>
+		<td>D1000250.01</td>
+		<td>微积分II<span style="color:red;">(重修)</span></td>
+<td>学科通识课程</td>		<td>5</td>
+<td style="">	  			72 
+</td><td style=""></td><td style="">			72
+</td>		
+</tr><tr>		<td>2015-2016 2</td>
+		<td>I0213810</td>
+		<td>I0213810.01</td>
+		<td>振动防盗电子狗设计与实现</td>
+<td>素质教育选修课（跨专业课外选修实验类）</td>		<td>1</td>
+<td style="color:red">	  			0 
+</td><td style="color:red"></td><td style="color:red">			0
+</td>		
+</tr><tr>		<td>2015-2016 2</td>
+		<td>E2201040</td>
+		<td>E2201040.06</td>
+		<td>操作系统基础</td>
+<td>学科基础课程</td>		<td>4</td>
+<td style="">	  			72 
+</td><td style=""></td><td style="">			72
+</td>		
+</tr><tr>		<td>2014-2015 1</td>
+		<td>B1300140</td>
+		<td>B1300140.37</td>
+		<td>通用英语</td>
+<td>外语</td>		<td>4</td>
+<td style="">	  			56 
+</td><td style="">	  			0 
+</td><td style="">			60
+</td>		
+</tr><tr>		<td>2014-2015 2</td>
+		<td>E2201530</td>
+		<td>E2201530.01</td>
+		<td>数字逻辑设计<span style="color:red;">(重修)</span></td>
+<td>本专业选修课</td>		<td>3</td>
+<td style="color:red">	  			54 
+</td><td style="color:red"></td><td style="color:red">			54
+</td>		
+</tr><tr>		<td>2015-2016 2</td>
+		<td>B1301120</td>
+		<td>B1301120.72</td>
+		<td>跨文化交际</td>
+<td>B类人文素养类</td>		<td>2</td>
+<td style="">	  			64 
+</td><td style=""></td><td style="">			64
+</td>		
+</tr><tr>		<td>2014-2015 2</td>
+		<td>I1717930</td>
+		<td>I1717930.01</td>
+		<td>纳米新能源材料制备与结构表征综合实验</td>
+<td>素质教育选修课（跨专业课外选修实验类）</td>		<td>3</td>
+<td style="">	  			71 
+</td><td style=""></td><td style="">			71
+</td>		
+</tr><tr>		<td>2015-2016 1</td>
+		<td>G2225530</td>
+		<td>G2225530.01</td>
+		<td>UNIX操作系统基础</td>
+<td>专业核心课程</td>		<td>3</td>
+<td style="">	  			80 
+</td><td style=""></td><td style="">			80
+</td>		
+</tr><tr>		<td>2016-2017 1</td>
+		<td>I0539930</td>
+		<td>I0539930.01</td>
+		<td>照明设计基础</td>
+<td>素质教育选修课（自然科学类）</td>		<td>3</td>
+<td style="color:red">	  			6 
+</td><td style="color:red"></td><td style="color:red">			6
+</td>		
+</tr><tr>		<td>2016-2017 1</td>
+		<td>K2226620</td>
+		<td>K2226620.01</td>
+		<td>综合应用设计 II</td>
+<td>实践类核心课程</td>		<td>2</td>
+<td style="">	  			87 
+</td><td style=""></td><td style="">			87
+</td>		
+</tr><tr>		<td>2015-2016 1</td>
+		<td>E2200640</td>
+		<td>E2200640.01</td>
+		<td>面向对象程序设计(java)</td>
+<td>学科基础课程</td>		<td>4</td>
+<td style="">	  			67 
+</td><td style=""></td><td style="">			67
+</td>		
+</tr><tr>		<td>2015-2016 1</td>
+		<td>F2201620</td>
+		<td>F2201620.03</td>
+		<td>IT工程师职业基础</td>
+<td>学科拓展课程</td>		<td>2</td>
+<td style="">	  			76 
+</td><td style=""></td><td style="">			76
+</td>		
+</tr><tr>		<td>2015-2016 2</td>
+		<td>G2225130</td>
+		<td>G2225130.02</td>
+		<td>COBOL程序设计</td>
+<td>专业核心课程</td>		<td>3</td>
+<td style="">	  			49 
+</td><td style="">	  			60 
+</td><td style="">			60
+</td>		
+</tr></tbody>
+</table>
 </div>
 <script type="text/javascript">
-document.write("<div class='auth_page_wrapper' style='background:url(/authserver/custom/images/log-bg"+erke+".jpg) no-repeat 0px 0px;' id=Change>");
-</script>
-<div class="">
-<div class="auth_logo">
-    <img src="/authserver/custom/images/login-logo.png" alt="logo"/>
-	<!--
-	<div class="pointTitle">
-	<a href="" class="auth_login_forgetp"><small>登录规则</small></a>
-	<a href="getBackPasswordMainPage.do" class="auth_login_forgetp"><small>忘记密码？</small></a>
-	</div>
-	-->
-</div>
-<div class="auth_login_content">
-    <div class="auth_login_left">
-        <div class="auth_others">
-            
-        </div>
-    </div>
-    
-
-        
-        
-            
-        
-        
-    
-    <div class="auth_login_right">
-        <div class="auth_tab">
-            <div class="auth_tab_links">
-                <ul>
-                    <li id="accountLogin" style="width:100%;" class="" tabid="01">
-					<p><img src="/authserver/custom/images/log-title.png" style="margin-right: 47%;"></p></li>
-					<!--
-                    
-					-->
-                    
-                </ul>
-            </div>
-            <div class="clearfloat"></div>
-            <div class="auth_tab_content">
-                <div tabid="01" class="auth_tab_content_item">
-                    <form id="casLoginForm" class="fm-v clearfix amp-login-form" role="form" action="/authserver/login?service=http%3A%2F%2Feams.uestc.edu.cn%2Feams%2Fteach%2Fgrade%2Fcourse%2Fperson%21historyCourseGrade.action%3FprojectType%3DMAJOR" method="post">
-                       <!-- -->
-	
-		
-                        <p class="ipt-bg1">
-							<span class="fr"><a href="articles/loginRule.jsp"  target="_blank" tabindex="3000">登录规则</a></span>
-                            <input id="username" name="username" placeholder="  学号/职工号" class="auth_input" type="text" value=""/>
-                            <span id="usernameError" style="display:none;" class="auth_error">请输入用户名</span>
-                        </p>
-						
-						
-						
-
-                        <p class="ipt-bg2">
-							<span class="fr"><a href="getBackPasswordMainPage.do" target="_blank" tabindex="2000">忘记密码</a></span>
-                            <input id="password" name="password" placeholder="  密码" class="auth_input" type="password" value="" autocomplete="off"/>
-                            <span id="passwordError" style="display:none;" class="auth_error">请输入密码</span>
-                        </p>
-
-                        <p id="cpatchaDiv">
-
-                        </p>
-
-                       
-                         <p>
-                                
-								 <br>
-								<!-- <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-								-->
-								<!--	
-								<a href="getBackPasswordMainPage.do" class="auth_login_forgetp">
-									<small>忘记密码？</small>
-								</a>
-								-->
-								<!--<input type="checkbox" name="rememberMe" id="rememberMe"/> <label
-                                    onmousedown="javascript:$('.iCheck-helper').click();">一周内免登录</label>-->
-								
-								<button type="submit" class="auth_login_btn primary full_width">登录</button>
-                           </p>
-                       
-                        
-
-                        <input type="hidden" name="lt" value="LT-113968-TQ2eBizpMrkRpmOFdHEk7M1fdbpnUh1490864365913-oHZo-cas"/>
-                        <input type="hidden" name="dllt" value="userNamePasswordLogin"/>
-                        <input type="hidden" name="execution" value="e2s1"/>
-                        <input type="hidden" name="_eventId" value="submit"/>
-                        <input type="hidden" name="rmShown" value="1">
-                    </form>
-                </div>
-                
-                
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="hidenCaptchaDiv" style="display: none;">
-   <!-- <i class="auth_icon auth_icon_bar"></i>-->
-    <input type="text" placeholder=" 验证码" id="captchaResponse" name="captchaResponse"
-           class="auth_input captcha-input"/>
-    <img id="captchaImg" class="captcha-img" src="captcha.html" alt="验证码" title="验证码"/>
-            <span style="cursor: pointer;color: #1dadff;margin-left: 2px;" id="changeCaptcha"
-                  class="chk_text">换一张</span>
-    <span id="cpatchaError" style="display:none;" class="auth_error">请输入验证码</span>
-</div>
-
-
-<div class="clearfloat"></div>
-<div class="footer">
-    ﻿
-
- <span>
-    版权所有 2015 电子科技大学 技术支持电话：028-61831184 邮箱：portal@uestc.edu.cn
- </span>
-
-</div>
-</div>
-
-<script type="text/javascript">
-document.write("</div>")
-</script>
-
-<script type="text/javascript" src="/authserver/custom/js/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="/authserver/custom/js/icheck.min.js"></script>
-
-<script type="text/javascript" src="/authserver/custom/js/login.js"></script>
-<script type="text/javascript" src="/authserver/custom/js/login-wisedu.js"></script>
-    
-<script type="text/javascript">
-
-    // 选中tab框
-    var dllt = '';
-    if (dllt != '' && dllt == 'dynamicLogin') {
-        selectLi($("#dyLogin"));
-    } else {
-        selectLi($("#accountLogin"));
+  var clearCheckbox_grid7489594821 = function() {
+    jQuery("#grid7489594821").find(".box:checkbox").removeProp("checked");
+    jQuery("#grid7489594821").find(".gridselect-top :checkbox").removeProp("checked");
+    return true;
+  }
+  page_grid7489594821 = bg.page("/eams/teach/grade/course/person!historyCourseGrade.action;jsessionid=1E7DCE2D68990A6843CB8A11FDA80EF1","");
+  {
+    var _paramstring = 'projectType=MAJOR';
+    var _params = _paramstring.split('&');
+    for (var i = 0; i < _params.length; i++) {
+      _params[i] = decodeURIComponent(_params[i]);
     }
-
-    $(document).ready(function () {
-
-        
-
-    });
-
-
-
-
+    _paramstring = _params.join('&');
+    page_grid7489594821.target("",'grid7489594821').action("/eams/teach/grade/course/person!historyCourseGrade.action;jsessionid=1E7DCE2D68990A6843CB8A11FDA80EF1").addParams(_paramstring).orderBy("null");
+  }
+  bg.ui.grid.init('grid7489594821',page_grid7489594821);
 </script>
 </body>
-
-
-
 </html>
-
-    
-
 

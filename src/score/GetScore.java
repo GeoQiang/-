@@ -8,6 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.net.ssl.SSLException;
+
 import org.apache.http.Consts;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
@@ -58,11 +60,12 @@ public class GetScore {
         StringBuffer sBuffer2 = new StringBuffer(list.get(4));
         String execution = sBuffer2.substring(0, sBuffer2.length()-2);
         response.close();
+        httpGet.abort();
         
         //构造post方法
         List<NameValuePair> params = new ArrayList<NameValuePair>();
 		HttpPost httpPost = new HttpPost("http://idas.uestc.edu.cn/authserver/login?service=http://portal.uestc.edu.cn/index.portal");
-		httpPost.setHeader("Cookie", cookie1);//将get得到的cookie放进去
+//		httpPost.setHeader("Cookie", cookie1);//将get得到的cookie放进去
         httpPost.setHeader("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
         httpPost.setHeader("Accept-Language", "zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3");
         httpPost.setHeader("Accept-Encoding", "gzip, deflate");
@@ -71,8 +74,8 @@ public class GetScore {
         httpPost.setHeader("User-Agent", "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko");
    	 	httpPost.setHeader("Host", "idas.uestc.edu.cn");
    	 	httpPost.setHeader("Upgrade-insecure-Requests","1");
-		params.add(new BasicNameValuePair("username", "2014220402027"));
-        params.add(new BasicNameValuePair("password", "950826xxmh"));
+		params.add(new BasicNameValuePair("username", "2014220402026"));
+        params.add(new BasicNameValuePair("password", "58023497"));
         params.add(new BasicNameValuePair("lt", lt));
         params.add(new BasicNameValuePair("execution", execution));
         params.add(new BasicNameValuePair("dllt", "userNamePasswordLogin"));
@@ -83,6 +86,7 @@ public class GetScore {
         
         //执行post得到结果
         HttpResponse httpResponse1 = httpClient.execute(httpPost); 
+        
         if(httpResponse1.getStatusLine().getStatusCode() == 302)  
                  {  
                      HttpEntity httpEntity = httpResponse1.getEntity();  
@@ -95,9 +99,11 @@ public class GetScore {
        	 if(loca1.getName().equals("Location"))
        	  System.out.println(loca1.getValue());
         }
+        httpPost.abort();
         
         //查询成绩
          HttpGet g = new HttpGet("http://eams.uestc.edu.cn/eams/teach/grade/course/person!historyCourseGrade.action?projectType=MAJOR");
+
          //得到post请求返回的cookie信息
          String c = setCookie(httpResponse1);
 
@@ -111,7 +117,8 @@ public class GetScore {
        	 PrintWriter pw1 = new PrintWriter(uestc, "UTF-8");  
        	 pw1.println(content);  
        	 pw1.close();  
-		
+		 g.abort();
+		 httpClient.getConnectionManager().shutdown();  
 	}
 	
 	//从response中得到cookie(方法来自一篇登录知乎的案例博客)
