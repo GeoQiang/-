@@ -30,11 +30,11 @@ import org.apache.http.util.EntityUtils;
 //run this
 public class GetScore {
 	public static void main(String[] args) throws Exception, IOException {
-		//´´½¨httpClient¶ÔÏó£¬¶Ôcookie½øĞĞÉèÖÃ
+		//åˆ›å»ºhttpClientå¯¹è±¡ï¼Œå¯¹cookieè¿›è¡Œè®¾ç½®
 		RequestConfig requestConfig = RequestConfig.custom().setCookieSpec(CookieSpecs.STANDARD_STRICT).build();  
 		CloseableHttpClient httpClient = HttpClients.custom().setDefaultRequestConfig(requestConfig).build();
 		
-		//¹¹Ôìget·½·¨
+		//æ„é€ getæ–¹æ³•
 		HttpGet httpGet = new HttpGet("http://idas.uestc.edu.cn/authserver/login?service=http%3A%2F%2Fportal.uestc.edu.cn%2F");
         httpGet.setHeader("Accept","text/html, application/xhtml+xml, image/jxr, */*");  
         httpGet.setHeader("User-Agent","Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko");  
@@ -44,15 +44,15 @@ public class GetScore {
    	 	httpGet.setHeader("Upgrade-Insecure-Requests","1");
         httpGet.setHeader("Accept-Encoding", "gzip, deflate");
         
-        //Ö´ĞĞget·½·¨µÃµ½cookie
+        //æ‰§è¡Œgetæ–¹æ³•å¾—åˆ°cookie
         CloseableHttpResponse response = httpClient.execute(httpGet); 
-        String cookie1 = setCookie(response);//±£´æµÃµ½µÄcookie
+        String cookie1 = setCookie(response);//ä¿å­˜å¾—åˆ°çš„cookie
         
-        //½«ÏìÓ¦ÎÄ±¾·Å½ø×Ö·û´®(Ò»¿ªÊ¼ÎÒ×¼±¸·Å½øÎÄ±¾ÓÃhtmlcleaner½âÎöhtml,µ«ÊÇ²¢²»ÊÇ¹æ·¶µÄhtml,Ğ§¹û²»ÊÇºÜºÃ)
+        //å°†å“åº”æ–‡æœ¬æ”¾è¿›å­—ç¬¦ä¸²(ä¸€å¼€å§‹æˆ‘å‡†å¤‡æ”¾è¿›æ–‡æœ¬ç”¨htmlcleanerè§£æhtml,ä½†æ˜¯å¹¶ä¸æ˜¯è§„èŒƒçš„html,æ•ˆæœä¸æ˜¯å¾ˆå¥½)
         HttpEntity responseEntity = response.getEntity();  
         String responseHtml = EntityUtils.toString(responseEntity);
         
-        //´ÓÏìÓ¦ÖĞµÃµ½lt,execution2¸ö¶¯Ì¬²ÎÊı(ÓÃµÄÕıÔò±í´ïÊ½½ØÈ¡×Ö·û´®)
+        //ä»å“åº”ä¸­å¾—åˆ°lt,execution2ä¸ªåŠ¨æ€å‚æ•°(ç”¨çš„æ­£åˆ™è¡¨è¾¾å¼æˆªå–å­—ç¬¦ä¸²)
         MatchTool mTool = new MatchTool();
         List<String> list = mTool.match(responseHtml, "input", "value");
         StringBuffer sBuffer1 = new StringBuffer(list.get(2));
@@ -62,10 +62,10 @@ public class GetScore {
         response.close();
         httpGet.abort();
         
-        //¹¹Ôìpost·½·¨
+        //æ„é€ postæ–¹æ³•
         List<NameValuePair> params = new ArrayList<NameValuePair>();
 		HttpPost httpPost = new HttpPost("http://idas.uestc.edu.cn/authserver/login?service=http://portal.uestc.edu.cn/index.portal");
-//		httpPost.setHeader("Cookie", cookie1);//½«getµÃµ½µÄcookie·Å½øÈ¥
+//		httpPost.setHeader("Cookie", cookie1);//å°†getå¾—åˆ°çš„cookieæ”¾è¿›å»
         httpPost.setHeader("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
         httpPost.setHeader("Accept-Language", "zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3");
         httpPost.setHeader("Accept-Encoding", "gzip, deflate");
@@ -74,8 +74,8 @@ public class GetScore {
         httpPost.setHeader("User-Agent", "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko");
    	 	httpPost.setHeader("Host", "idas.uestc.edu.cn");
    	 	httpPost.setHeader("Upgrade-insecure-Requests","1");
-		params.add(new BasicNameValuePair("username", "2014220402026"));
-        params.add(new BasicNameValuePair("password", "58023497"));
+		params.add(new BasicNameValuePair("username", "xxxxxxx"));
+        params.add(new BasicNameValuePair("password", "xxxxx"));
         params.add(new BasicNameValuePair("lt", lt));
         params.add(new BasicNameValuePair("execution", execution));
         params.add(new BasicNameValuePair("dllt", "userNamePasswordLogin"));
@@ -84,14 +84,14 @@ public class GetScore {
         String result = "";
         httpPost.setEntity(new UrlEncodedFormEntity(params,Consts.UTF_8));
         
-        //Ö´ĞĞpostµÃµ½½á¹û
+        //æ‰§è¡Œpostå¾—åˆ°ç»“æœ
         HttpResponse httpResponse1 = httpClient.execute(httpPost); 
         
         if(httpResponse1.getStatusLine().getStatusCode() == 302)  
                  {  
                      HttpEntity httpEntity = httpResponse1.getEntity();  
-                     result = EntityUtils.toString(httpEntity);//È¡³öÓ¦´ğ×Ö·û´®  
-                     System.out.println(result);//é¿Õ
+                     result = EntityUtils.toString(httpEntity);//å–å‡ºåº”ç­”å­—ç¬¦ä¸²  
+                     System.out.println(result);//ç‚ºç©º
                   }
         
         Header[] loca = httpResponse1.getAllHeaders();
@@ -101,13 +101,13 @@ public class GetScore {
         }
         httpPost.abort();
         
-        //²éÑ¯³É¼¨
+        //æŸ¥è¯¢æˆç»©
          HttpGet g = new HttpGet("http://eams.uestc.edu.cn/eams/teach/grade/course/person!historyCourseGrade.action?projectType=MAJOR");
 
-         //µÃµ½postÇëÇó·µ»ØµÄcookieĞÅÏ¢
+         //å¾—åˆ°postè¯·æ±‚è¿”å›çš„cookieä¿¡æ¯
          String c = setCookie(httpResponse1);
 
-         //½«cookie×¢Èëµ½getÇëÇóÍ·µ±ÖĞ
+         //å°†cookieæ³¨å…¥åˆ°getè¯·æ±‚å¤´å½“ä¸­
          g.setHeader("Cookie",c);
          CloseableHttpResponse r = httpClient.execute(g);
          String content = EntityUtils.toString(r.getEntity());
@@ -121,7 +121,7 @@ public class GetScore {
 		 httpClient.getConnectionManager().shutdown();  
 	}
 	
-	//´ÓresponseÖĞµÃµ½cookie(·½·¨À´×ÔÒ»ÆªµÇÂ¼ÖªºõµÄ°¸Àı²©¿Í)
+	//ä»responseä¸­å¾—åˆ°cookie(æ–¹æ³•æ¥è‡ªä¸€ç¯‡ç™»å½•çŸ¥ä¹çš„æ¡ˆä¾‹åšå®¢)
 	public static Map<String,String> cookieMap = new HashMap<String, String>(64);
     public static String setCookie(HttpResponse httpResponse)
     {
